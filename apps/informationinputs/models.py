@@ -23,3 +23,16 @@ class informationinput(models.Model):
     class Meta:
         verbose_name = u"考核信息"
         verbose_name_plural = verbose_name
+
+
+class is_informationinput(informationinput):
+    class Meta:
+        verbose_name = "审核审批"
+        verbose_name_plural = verbose_name
+        proxy = True
+
+class pro_informationinput(informationinput):
+    class Meta:
+        verbose_name = "管理员流程补救"
+        verbose_name_plural = verbose_name
+        proxy = True
