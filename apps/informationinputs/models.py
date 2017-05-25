@@ -31,8 +31,14 @@ class is_informationinput(informationinput):
         verbose_name_plural = verbose_name
         proxy = True
 
+    def save_user(self):
+        return self.request.user.id
+
+    save_user.short_description = "考核员"
+
 class pro_informationinput(informationinput):
     class Meta:
         verbose_name = "管理员流程补救"
         verbose_name_plural = verbose_name
         proxy = True
+

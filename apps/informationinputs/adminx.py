@@ -10,7 +10,7 @@ class informationinputAdmin(object):
     model_icon = 'fa fa-quora'
 
 class is_informationinputAdmin(object):
-    list_display = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
+    list_display = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree','save_user']
     search_fields = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     list_filter = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     model_icon = 'fa fa-quora'

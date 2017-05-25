@@ -16,7 +16,6 @@ class w_employeeAdmin(object):
     list_display = ['w_employeeid', 'name','w_section','w_team']
     search_fields = ['w_employeeid', 'name','w_section','w_team']
     list_filter = ['w_employeeid', 'name','w_section','w_team']
-    relfield_style = 'fk-ajax'
 
 xadmin.site.register(w_section, w_sectionAdmin)
 xadmin.site.register(w_team, w_teamAdmin)

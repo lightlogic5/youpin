@@ -24,3 +24,4 @@ class UserProfile(AbstractUser):
 
   def __unicode__(self):
       return self.username
+
