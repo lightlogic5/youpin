@@ -1,16 +1,22 @@
 import xadmin
 
 from .models import informationinput,is_informationinput,pro_informationinput
+from users.models import UserProfile
 
 class informationinputAdmin(object):
-    list_display = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
+    list_display = ['category','sketch','w_employeeid','add_time','image','has_agree']
     search_fields = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     list_filter = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     exclude = ["has_agree"]
     model_icon = 'fa fa-quora'
 
+    def save_models(self):
+        new_obj = self.new_obj
+        new_obj.user = self.request.UserProfile.nick_name
+        new_obj.save()
+
 class is_informationinputAdmin(object):
-    list_display = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree','save_user']
+    list_display = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     search_fields = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     list_filter = ['user', 'category','sketch','w_employeeid','add_time','image','has_agree']
     model_icon = 'fa fa-quora'
