@@ -12,7 +12,7 @@ from institutions.models import institution
 
 class informationinput(models.Model):
     "考核信息录入"
-    user=models.ForeignKey(UserProfile,verbose_name=u"考核员")
+    user=models.ForeignKey(UserProfile,verbose_name=u"考核员", null=True, blank=True)
     category=models.ForeignKey(institution,verbose_name="制度ID和加扣分")
     sketch=models.CharField(max_length=500,verbose_name=u"简述")
     w_employeeid = models.ForeignKey(w_employee, verbose_name=u"考核对象")
