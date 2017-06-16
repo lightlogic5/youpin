@@ -17,12 +17,15 @@ class informationinput(models.Model):
     sketch=models.CharField(max_length=500,verbose_name=u"简述")
     w_employeeid = models.ForeignKey(w_employee, verbose_name=u"考核对象")
     add_time=models.DateTimeField(default=datetime.now, verbose_name=u"添加时间")
-    image = models.ImageField(upload_to="information/%y/%m", default=u"information/default.png", max_length=100)
+    image = models.ImageField(upload_to=u"information/%y/%m", default=u"information/default.png", max_length=1000)
     has_agree=models.BooleanField(default=False,verbose_name=u"是否审查通过")
+    catego = models.CharField(default="gr", verbose_name=u"考核对象类别", max_length=20,choices=(("gd", "工段"), ("bz", "班组"), ("gr", "个人")))
 
     class Meta:
         verbose_name = u"考核信息"
         verbose_name_plural = verbose_name
+
+
 
 
 class is_informationinput(informationinput):

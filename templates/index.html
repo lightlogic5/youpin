@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+.active2{ color:#00F;font-weight:bold;}
+</style>
+</head>
+<body>
+<section>
+					<div class="cont">
+
+                            <a href="?ct=gr"><span class="{% ifequal category 'gr' %}active2{% endifequal %}">个人</span></a>
+
+                            <a href="?ct=bz"><span class="{% ifequal category 'bz' %}active2{% endifequal %}">班组</span></a>
+
+                            <a href="?ct=gd"><span class="{% ifequal category 'gd' %}active2{% endifequal %}">工段</span></a>
+
+					</div>
+<div>
+    {% for inal in all_in %}
+    <div>{{ inal.add_time }}</div>
+    <div>{{ inal.sketch }}</div>
+    <div>{{ inal.catego }}</div>
+        <div>{{ inal.w_employeeid__name }}</div>
+        <div>{{ inal.category__score }}</div>
+    <div><img width="200" height="120"  src="{{ MEDIA_URL }}{{ inal.image }}"/></div>
+    {% endfor %}
+</div>
+<div>
+    {% for ina in allm %}
+    <div>{{ ina.w_employeeid__name }}</div>
+    <div>{{ ina.total }}</div>
+    {% endfor %}
+</div>
+</section>
+
+</body>
+</html>
